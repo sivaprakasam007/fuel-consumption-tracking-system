@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fuel-consumption-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fuel-consumption-app
+  template:
+    metadata:
+      labels:
+        app: fuel-consumption-app
+    spec:
+      containers:
+      - name: fuel-consumption-app
+        image: fuel-consumption-app:latest
+        imagePullPolicy: Never
